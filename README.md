@@ -6,16 +6,29 @@
 ```bash
 # 假设可执行文件位于/build/bin中
 # 在项目根目录下执行
-./scripts/run.sh
+source scripts/run.sh
 ```
 使用scripts中的脚本评估分割结果：
 ```bash
-./scripts/evaluate.sh
+source scripts/evaluate.sh
 ```
 注意，如果报错evaluator没有权限，手动添加权限即可：
 ```shell
 chmod u+x ./etc/evaluator
 ```
+如果报错：
+```shell
+: command not found
+: command not found
+bash: scripts/run.sh: line 8: syntax error near unexpected token `$'do\r''
+'ash: scripts/run.sh: line 8: `for case in "${cases[@]}"; do
+```
+说明脚本文件中包含Windows风格的换行符，可以使用
+1. dos2unix工具
+2. VSCode提供的将换行符从CRLF转换为LF功能  
+
+将scripts中的脚本转为Unix风格，即可正常运行。
+
 
 ## 项目结构   
 1. data/: 公开的测试数据
