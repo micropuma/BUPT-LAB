@@ -12,6 +12,10 @@
 ```bash
 ./scripts/evaluate.sh
 ```
+注意，如果报错evaluator没有权限，手动添加权限即可：
+```shell
+chmod u+x ./etc/evaluator
+```
 
 ## 项目结构   
 1. data/: 公开的测试数据
