@@ -6,15 +6,17 @@
 ```bash
 # 假设可执行文件位于/build/bin中
 # 在项目根目录下执行
-source scripts/run.sh
+./scripts/run.sh
 ```
 使用scripts中的脚本评估分割结果：
 ```bash
-source scripts/evaluate.sh
+./scripts/evaluate.sh
 ```
-注意，如果报错evaluator没有权限，手动添加权限即可：
+注意，如果报错没有权限，手动添加权限即可：
 ```shell
 chmod u+x ./etc/evaluator
+chmod u+x ./scripts/evaluate.sh
+chmod u+x ./scripts/run.sh
 ```
 如果报错：
 ```shell
